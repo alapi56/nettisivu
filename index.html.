@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToMotor | Moottoripyörähuolto</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101010;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    background: #080808;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #ed2929;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ed2929;
+}
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    background:
+    linear-gradient(90deg, rgba(0,0,0,.95), rgba(0,0,0,.35)),
+    url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1800")
+    center/cover;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero small {
+    color: #ed2929;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #cccccc;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ed2929;
+    color: white;
+    padding: 14px 27px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background: #c51d1d;
+}
+
+section {
+    padding: 85px 10%;
+}
+
+.section-title {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.red-line {
+    width: 55px;
+    height: 4px;
+    background: #ed2929;
+    margin-bottom: 35px;
+}
+
+.intro {
+    color: #bdbdbd;
+    max-width: 650px;
+}
+
+.services {
+    background: #171717;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background: #202020;
+    padding: 30px;
+    border-bottom: 3px solid #ed2929;
+}
+
+.service h3 {
+    margin-bottom: 12px;
+}
+
+.service p {
+    color: #bdbdbd;
+    font-size: 15px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.about p {
+    color: #bdbdbd;
+    margin-bottom: 15px;
+}
+
+.contact {
+    background: #171717;
+    text-align: center;
+}
+
+.contact p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #080808;
+    color: #777;
+    font-size: 13px;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 50px 7%;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TO<span>MOTOR</span></div>
+    <nav>
+        <a href="#etusivu">Etusivu</a>
+        <a href="#palvelut">Palvelut</a>
+        <a href="#yritys">Yritys</a>
+        <a href="#yhteystiedot">Yhteystiedot</a>
+    </nav>
+</header>
+
+<main>
+
+<div class="hero" id="etusivu">
+    <div class="hero-content">
+        <small>MOOTTORIPYÖRÄ- JA PIENKONEHUOLTO</small>
+        <h1>AMMATTITAITOISTA HUOLTOA.</h1>
+        <p>
+            Moottoripyörien ja pienkoneiden huoltoa
+            ammattitaidolla. Pidä kalustosi kunnossa
+            ja valmiina seuraavaan ajoon.
+        </p>
+        <a href="#yhteystiedot" class="btn">OTA YHTEYTTÄ</a>
+    </div>
+</div>
+
+<section id="palvelut" class="services">
+    <h2 class="section-title">PALVELUMME</h2>
+    <div class="red-line"></div>
+
+    <div class="service-grid">
+        <div class="service">
+            <h3>Moottoripyörähuolto</h3>
+            <p>Moottoripyörien huolto- ja korjaustyöt.</p>
+        </div>
+
+        <div class="service">
+            <h3>Mopohuolto</h3>
+            <p>Mopojen huolto, tarkastus ja korjaus.</p>
+        </div>
+
+        <div class="service">
+            <h3>Pienkonehuolto</h3>
+            <p>Pienkoneiden huolto ja kunnossapito.</p>
+        </div>
+
+        <div class="service">
+            <h3>Vikojen selvitys</h3>
+            <p>Teknisten ongelmien tutkiminen ja korjaaminen.</p>
+        </div>
+    </div>
+</section>
+
+<section id="yritys" class="about">
+    <div>
+        <h2 class="section-title">TOIMINTAA AMMATTITAIDOLLA</h2>
+        <div class="red-line"></div>
+        <p>
+            ToMotor on moottoripyörien ja pienkoneiden
+            huoltoon keskittyvä yritys.
+        </p>
+        <p>
+            Meille tärkeintä on toimiva kalusto,
+            laadukas työnjälki ja tyytyväinen asiakas.
+        </p>
+    </div>
+
+    <img
+    src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1000"
+    alt="Moottoripyörä">
+</section>
+
+<section id="yhteystiedot" class="contact">
+    <h2 class="section-title">OTA YHTEYTTÄ</h2>
+    <div class="red-line" style="margin: 0 auto 30px;"></div>
+    <p>Ota yhteyttä ja kysy lisää huoltopalveluista.</p>
+    <a href="https://tomotor.fi/" class="btn">YRITYKSEN YHTEYSTIEDOT</a>
+</section>
+
+</main>
+
+<footer>
+    © 2026 ToMotor – Esittelymalli
+</footer>
+
+</body>
+</html>
