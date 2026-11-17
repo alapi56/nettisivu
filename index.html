@@ -3,469 +3,191 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MS AutoDetailing | Premium Car Care</title>
-<meta name="description" content="MS AutoDetailing – auton pesu, sisätilojen puhdistus ja maalipinnan kiillotus.">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MS AutoDetailing</title>
 <style>
-:root {
- --black:#090909;
- --dark:#141414;
- --white:#f5f5f5;
- --gray:#999;
- --line:#303030;
-}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
- background:var(--black);
- color:var(--white);
- font-family:Arial,Helvetica,sans-serif;
-}
-a{color:inherit;text-decoration:none}
+body{background:#080808;color:#fff;font-family:Arial,sans-serif}
 header{
- height:82px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:0 7%;
- background:#090909;
- border-bottom:1px solid #292929;
- position:sticky;
- top:0;
- z-index:100;
+height:85px;padding:0 7%;display:flex;align-items:center;
+justify-content:space-between;background:#080808;
+border-bottom:1px solid #292929;position:sticky;top:0;z-index:10
 }
-.logo{
- font-size:23px;
- font-weight:800;
- letter-spacing:2px;
-}
+.logo{font-size:23px;font-weight:800;letter-spacing:2px}
 .logo span{font-weight:300;color:#999}
-nav{display:flex;align-items:center;gap:30px}
-nav a{
- font-size:13px;
- color:#ccc;
- transition:.2s;
-}
+nav{display:flex;gap:28px}
+nav a{color:#ccc;text-decoration:none;font-size:13px}
 nav a:hover{color:white}
-.nav-button{
- border:1px solid white;
- padding:12px 20px;
- color:white;
-}
 .hero{
- min-height:650px;
- display:flex;
- align-items:center;
- padding:8%;
- background:
- linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.58) 48%,rgba(0,0,0,.12)),
- url("https://images.pexels.com/photos/6873191/pexels-photo-6873191.jpeg?auto=compress&cs=tinysrgb&w=2000") center/cover;
+min-height:680px;display:flex;align-items:center;padding:8%;
+background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.05)),
+url("https://cdn.durable.co/getty/34ej1RIA35AVAK2k1WOMHS9uwlgOluS2QdAkM5O2JmAhsUN3HcmPGB07JCXK2j7q.jpeg") center/cover
 }
-.hero-content{max-width:650px}
-.eyebrow{
- color:#aaa;
- font-size:12px;
- letter-spacing:5px;
- margin-bottom:24px;
+.hero-text{max-width:570px}
+.hero small{letter-spacing:5px;color:#ccc}
+.hero h1{font-size:clamp(48px,7vw,85px);line-height:1.05;margin:25px 0}
+.hero p{font-size:18px;line-height:1.7;color:#ddd;margin-bottom:30px}
+.button{display:inline-block;padding:16px 27px;background:white;color:black;text-decoration:none;font-size:12px;font-weight:bold}
+section{padding:90px 7%}
+.heading{text-align:center;margin-bottom:45px}
+.heading small{letter-spacing:4px;color:#888}
+.heading h2{font-size:36px;margin-top:15px}
+.heading p{color:#999;margin-top:15px;line-height:1.7}
+.gallery{background:#111}
+.photos{
+display:grid;grid-template-columns:repeat(2,1fr);gap:18px
 }
-.hero h1{
- font-size:clamp(45px,6vw,78px);
- line-height:1.03;
- letter-spacing:-2px;
- margin-bottom:25px;
-}
-.hero h1 span{color:#aaa}
-.hero p{
- max-width:530px;
- color:#ddd;
- font-size:17px;
- line-height:1.8;
- margin-bottom:32px;
-}
-.button{
- display:inline-block;
- padding:16px 27px;
- background:white;
- color:black;
- font-size:12px;
- font-weight:bold;
- letter-spacing:1px;
- transition:.25s;
-}
-.button:hover{background:#bbb}
-.button-outline{
- display:inline-block;
- padding:15px 25px;
- border:1px solid white;
- font-size:12px;
- font-weight:bold;
-}
-section{padding:95px 8%}
-.section-heading{
- max-width:700px;
- margin:0 auto 48px;
- text-align:center;
-}
-.section-heading small{
- color:#999;
- letter-spacing:4px;
- font-size:11px;
-}
-.section-heading h2{
- font-size:38px;
- margin:15px 0;
- letter-spacing:-1px;
-}
-.section-heading p{
- color:#999;
- line-height:1.8;
- font-size:15px;
-}
+.photo{background:#080808;overflow:hidden}
+.photo img{width:100%;height:370px;object-fit:cover;display:block;transition:.5s}
+.photo:hover img{transform:scale(1.035)}
+.photo-info{padding:22px}
+.photo-info h3{font-size:18px}
+.photo-info p{color:#888;font-size:13px;margin-top:8px}
+.work{background:#080808}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.work img{width:100%;height:350px;object-fit:cover;display:block}
+.work h3{font-size:20px;margin-top:20px}
+.work p{color:#999;line-height:1.7;margin-top:10px}
 .services{background:#111}
-.service-grid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:1px;
- background:#333;
- border:1px solid #333;
-}
-.service{
- background:#111;
- padding:38px 30px;
- min-height:190px;
- transition:.25s;
-}
-.service:hover{background:#1c1c1c}
-.service-number{
- font-size:12px;
- color:#777;
- margin-bottom:22px;
-}
-.service h3{font-size:19px;margin-bottom:14px}
-.service p{
- color:#999;
- font-size:14px;
- line-height:1.8;
-}
-.gallery{background:#090909}
-.gallery-grid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:16px;
-}
-.gallery-card{background:#151515;overflow:hidden}
-.gallery-card img{
- width:100%;
- height:260px;
- object-fit:cover;
- display:block;
- transition:transform .5s;
-}
-.gallery-card:hover img{transform:scale(1.045)}
-.gallery-info{padding:20px}
-.gallery-info h3{font-size:16px;margin-bottom:8px}
-.gallery-info p{font-size:13px;color:#999}
-.gallery-note{
- text-align:center;
- color:#777;
- font-size:12px;
- margin-top:25px;
-}
-.process{background:#151515}
-.process-grid{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:25px;
-}
-.process-card{background:#090909}
-.process-card img{
- width:100%;
- height:340px;
- object-fit:cover;
- display:block;
-}
-.process-content{padding:28px}
-.process-content h3{font-size:21px;margin-bottom:12px}
-.process-content p{color:#999;line-height:1.8;font-size:14px}
-.pricing{background:#090909}
-.price-list{max-width:800px;margin:auto}
-.price-row{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:15px;
- padding:23px 12px;
- border-bottom:1px solid #333;
-}
-.price-row span{font-size:15px}
-.price-row strong{font-size:15px;white-space:nowrap}
-.price-note{
- text-align:center;
- color:#777;
- font-size:12px;
- margin-top:25px;
-}
-.about{
- background:#111;
- text-align:center;
-}
-.about-text{
- max-width:750px;
- margin:auto;
- color:#aaa;
- line-height:2;
- font-size:16px;
-}
-.contact{
- background:#eee;
- color:#111;
- text-align:center;
-}
-.contact .section-heading p{color:#555}
-.contact-details{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:45px;
- margin:35px 0;
-}
-.contact-details div{min-width:150px}
-.contact-details small{
- display:block;
- color:#777;
- font-size:11px;
- letter-spacing:2px;
- margin-bottom:10px;
-}
-.contact-details strong{font-size:15px}
-.contact .button{background:#111;color:white}
-footer{
- padding:40px 8%;
- background:#070707;
-}
-.footer-top{
- display:flex;
- justify-content:space-between;
- flex-wrap:wrap;
- gap:30px;
- padding-bottom:30px;
-}
-.footer-brand{font-size:21px;font-weight:bold;letter-spacing:2px}
-.footer-brand span{color:#888}
-.footer-top p{font-size:13px;color:#888;line-height:1.8}
-.footer-bottom{
- border-top:1px solid #292929;
- padding-top:22px;
- color:#666;
- font-size:12px;
-}
-@media(max-width:850px){
- header{height:auto;padding:22px 5%;flex-direction:column;gap:20px}
- nav{gap:16px;flex-wrap:wrap;justify-content:center}
- nav a{font-size:11px}
- .hero{min-height:560px;padding:8% 6%}
- section{padding:70px 6%}
- .service-grid{grid-template-columns:repeat(2,1fr)}
- .gallery-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:550px){
- .service-grid,.gallery-grid,.process-grid{grid-template-columns:1fr}
- .hero h1{font-size:46px}
- .gallery-card img{height:250px}
- .process-card img{height:260px}
- .section-heading h2{font-size:30px}
- .contact-details{gap:25px;flex-direction:column}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#333}
+.service{background:#111;padding:32px}
+.service h3{margin-bottom:14px}
+.service p{color:#999;line-height:1.7;font-size:14px}
+.contact{background:#eee;color:#111;text-align:center}
+.contact p{color:#555;margin:15px}
+.contact .button{background:#111;color:white;margin-top:20px}
+footer{padding:35px 7%;background:#050505;color:#777;text-align:center;font-size:12px}
+@media(max-width:750px){
+header{height:auto;padding:22px 5%;flex-direction:column;gap:20px}
+nav{gap:15px;flex-wrap:wrap;justify-content:center}
+nav a{font-size:11px}
+.hero{min-height:570px;padding:7%}
+.photos,.work-grid{grid-template-columns:1fr}
+.photo img{height:270px}
+.work img{height:270px}
+.service-grid{grid-template-columns:1fr}
+section{padding:65px 5%}
 }
 </style>
 </head>
-
 <body>
 
 <header>
- <a class="logo" href="#etusivu">MS <span>AUTODETAILING</span></a>
- <nav>
-  <a href="#etusivu">Etusivu</a>
-  <a href="#palvelut">Palvelut</a>
-  <a href="#galleria">Galleria</a>
-  <a href="#hinnasto">Hinnasto</a>
-  <a href="#yhteystiedot" class="nav-button">Ota yhteyttä</a>
- </nav>
+<div class="logo">MS <span>AUTODETAILING</span></div>
+<nav>
+<a href="#etusivu">ETUSIVU</a>
+<a href="#galleria">GALLERIA</a>
+<a href="#tyot">KIILLOTUS</a>
+<a href="#palvelut">PALVELUT</a>
+<a href="#yhteys">YHTEYS</a>
+</nav>
 </header>
 
 <main>
-
 <div class="hero" id="etusivu">
- <div class="hero-content">
-  <div class="eyebrow">MS AUTODETAILING</div>
-  <h1>PUHTAUS.<br>KIILTO.<br><span>LAATU.</span></h1>
-  <p>
-   Huolellista autonhoitoa ja viimeisteltyä työnjälkeä.
-   Pidämme huolta autosi ulkonäöstä yksityiskohtia myöten.
-  </p>
-  <a href="#palvelut" class="button">TUTUSTU PALVELUIHIN →</a>
- </div>
+<div class="hero-text">
+<small>MS AUTODETAILING</small>
+<h1>PUHDAS.<br>KIILTÄVÄ.<br>VIIMEISTELTY.</h1>
+<p>Autonhoitoa, huolellista pesua ja maalipinnan kiillotusta.</p>
+<a href="#galleria" class="button">KATSO KUVAT →</a>
+</div>
 </div>
 
-<section class="services" id="palvelut">
- <div class="section-heading">
-  <small>PALVELUMME</small>
-  <h2>Autosi ansaitsee parasta</h2>
-  <p>Huolellista autonhoitoa tavallisista käyttöautoista arvokkaampiin ajoneuvoihin.</p>
- </div>
-
- <div class="service-grid">
-  <div class="service">
-   <div class="service-number">01 / PESU</div>
-   <h3>Ylläpitopesu</h3>
-   <p>Auton säännöllinen puhdistus ja huolellinen käsinpesu.</p>
-  </div>
-  <div class="service">
-   <div class="service-number">02 / ULKOPINNAT</div>
-   <h3>Perusteellinen pesu</h3>
-   <p>Vanteet, ulkopinnat ja pinttyneen lian poistaminen.</p>
-  </div>
-  <div class="service">
-   <div class="service-number">03 / SISÄTILAT</div>
-   <h3>Sisätilojen puhdistus</h3>
-   <p>Penkkien, mattojen ja muiden sisäpintojen huolellinen puhdistus.</p>
-  </div>
-  <div class="service">
-   <div class="service-number">04 / KIILLOTUS</div>
-   <h3>Maalipinnan myllytys</h3>
-   <p>Maalipinnan kiillotus ja pesunaarmujen vähentäminen.</p>
-  </div>
-  <div class="service">
-   <div class="service-number">05 / SUOJAUS</div>
-   <h3>Vahaus</h3>
-   <p>Maalipinnan viimeistely ja suojaaminen vahalla.</p>
-  </div>
-  <div class="service">
-   <div class="service-number">06 / KOKONAISUUS</div>
-   <h3>Detailing-paketti</h3>
-   <p>Auton kokonaisvaltainen hoito asiakkaan tarpeiden mukaan.</p>
-  </div>
- </div>
-</section>
-
 <section class="gallery" id="galleria">
- <div class="section-heading">
-  <small>AUTOT JA AUTONHOITO</small>
-  <h2>Galleria</h2>
-  <p>Esimerkkejä autoista ja autonhoidon eri työvaiheista.</p>
- </div>
+<div class="heading">
+<small>DETAILING GALLERY</small>
+<h2>Autot ja kiiltävät pinnat</h2>
+<p>Valokuvia autonhoidosta, pesusta ja viimeistellyistä maalipinnoista.</p>
+</div>
 
- <div class="gallery-grid">
-  <div class="gallery-card">
-   <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=85" alt="Auto">
-   <div class="gallery-info"><h3>Moderni henkilöauto</h3><p>Auton ulkonäkö ja viimeistely</p></div>
-  </div>
-  <div class="gallery-card">
-   <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Urheiluauto">
-   <div class="gallery-info"><h3>Urheiluautot</h3><p>Kiiltävä maalipinta</p></div>
-  </div>
-  <div class="gallery-card">
-   <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1000&q=85" alt="Auto">
-   <div class="gallery-info"><h3>Arjen autot</h3><p>Puhtaus ja huoliteltu ulkonäkö</p></div>
-  </div>
-  <div class="gallery-card">
-   <img src="https://images.pexels.com/photos/6873191/pexels-photo-6873191.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Mercedes auton pesu">
-   <div class="gallery-info"><h3>Huolellinen pesu</h3><p>Auton pintojen puhdistus</p></div>
-  </div>
-  <div class="gallery-card">
-   <img src="https://images.pexels.com/photos/6873121/pexels-photo-6873121.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Musta auto vaahdossa">
-   <div class="gallery-info"><h3>Vaahtopesu</h3><p>Auton ulkopintojen puhdistus</p></div>
-  </div>
-  <div class="gallery-card">
-   <img src="https://images.pexels.com/photos/12181012/pexels-photo-12181012.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="BMW auton pesu">
-   <div class="gallery-info"><h3>Auton viimeistely</h3><p>Huolellinen pesuprosessi</p></div>
-  </div>
- </div>
- <p class="gallery-note">Gallerian kuvat ovat esittelykuvia, eivät MS AutoDetailingin omia asiakastöitä.</p>
+<div class="photos">
+<div class="photo">
+<img src="https://cdn.durable.co/getty/34ej1RIA35AVAK2k1WOMHS9uwlgOluS2QdAkM5O2JmAhsUN3HcmPGB07JCXK2j7q.jpeg" alt="Konekiillotus mustalle auton maalipinnalle">
+<div class="photo-info"><h3>Maalipinnan konekiillotus</h3><p>Kiillotustyö lähikuvassa</p></div>
+</div>
+
+<div class="photo">
+<img src="https://www.blakedowncarcompany.co.uk/admin/uploaded_photos/IG_29_DSC_0006.jpg" alt="Musta Audi RS5 kiiltävällä maalipinnalla">
+<div class="photo-info"><h3>Viimeistelty maalipinta</h3><p>Syvä kiilto ja selkeät heijastukset</p></div>
+</div>
+
+<div class="photo">
+<img src="https://chiclaveauto.com/assets/exterior-DPj8EeQX.jpg" alt="Auton käsinpesu vaahdolla">
+<div class="photo-info"><h3>Huolellinen käsinpesu</h3><p>Auton puhdistus vaahdolla</p></div>
+</div>
+
+<div class="photo">
+<img src="https://cdn.prod.website-files.com/617980e12b28e11f78539b04/619c3f8f95fc350312e3e0bc_DSC03176.jpg" alt="Audi S5 kiillotettu maalipinta">
+<div class="photo-info"><h3>Maalipinnan viimeistely</h3><p>Peilimäinen heijastus</p></div>
+</div>
+
+<div class="photo">
+<img src="https://images.squarespace-cdn.com/content/v1/59e2296749fc2b4d44d790c1/1688591324524-XWY74CLOBOIQ4E670DG6/Paint%2BCorrection%2BStamford%2BCT.jpeg" alt="Musta auto maalipinnan korjauksen jälkeen">
+<div class="photo-info"><h3>Maalipinnan korjaus</h3><p>Kiiltävä ja tasainen pinta</p></div>
+</div>
+
+<div class="photo">
+<img src="https://pub-b146f7eb558e4d258115b5548bfc3361.r2.dev/blog-images/how-much-should-a-car-detailer-charge/hero-1776988537718.jpg" alt="Auton konekiillotus">
+<div class="photo-info"><h3>Kiillotus koneella</h3><p>Huolellista pintakäsittelyä</p></div>
+</div>
+</div>
+<p style="text-align:center;color:#777;font-size:12px;margin-top:25px">
+Kuvat ovat ulkopuolisia esittelykuvia, eivät omia asiakastöitä.
+</p>
 </section>
 
-<section class="process">
- <div class="section-heading">
-  <small>HUOLELLINEN TYÖNJÄLKI</small>
-  <h2>Puhtaasta pinnasta kiiltävään lopputulokseen</h2>
-  <p>Autonhoidon eri työvaiheissa jokainen yksityiskohta merkitsee.</p>
- </div>
- <div class="process-grid">
-  <div class="process-card">
-   <img src="https://images.pexels.com/photos/6873020/pexels-photo-6873020.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Auton käsinpesu">
-   <div class="process-content">
-    <h3>Huolellinen käsinpesu</h3>
-    <p>Auton pinnan puhdistaminen ja lian poistaminen ovat hyvän lopputuloksen perusta.</p>
-   </div>
-  </div>
-  <div class="process-card">
-   <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=85" alt="Autonhoito">
-   <div class="process-content">
-    <h3>Maalipinnan viimeistely</h3>
-    <p>Oikein valittu kiillotus voi palauttaa maalipinnan kiiltoa ja vähentää näkyviä pesunaarmuja.</p>
-   </div>
-  </div>
- </div>
+<section class="work" id="tyot">
+<div class="heading">
+<small>PAINT CORRECTION</small>
+<h2>Maalipinnan kiillotus</h2>
+<p>Kiiltävä pinta syntyy oikeista työvaiheista ja huolellisesta viimeistelystä.</p>
+</div>
+<div class="work-grid">
+<div>
+<img src="https://garagemsoarez.com.br/assets/polimento_comercial-CBf5wS8p.webp" alt="Maalipinnan kiillotus koneella">
+<h3>Koneellinen kiillotus</h3>
+<p>Maalipinnan käsittely kiillotuskoneella ja oikeilla välineillä.</p>
+</div>
+<div>
+<img src="https://www.blakedowncarcompany.co.uk/admin/uploaded_photos/IG_29_DSC_0006.jpg" alt="Kiillotettu auton pinta">
+<h3>Viimeistelty lopputulos</h3>
+<p>Kiiltävä maalipinta, jossa ympäristön heijastukset näkyvät selkeästi.</p>
+</div>
+</div>
 </section>
 
-<section class="pricing" id="hinnasto">
- <div class="section-heading">
-  <small>HINNASTO</small>
-  <h2>Selkeät hinnat</h2>
-  <p>Esimerkkihinnat. Lopullinen hinta määräytyy auton koon ja kunnon mukaan.</p>
- </div>
- <div class="price-list">
-  <div class="price-row"><span>Ylläpitopesu</span><strong>Alk. 25 €</strong></div>
-  <div class="price-row"><span>Perusteellinen ulkopesu</span><strong>Alk. 45 €</strong></div>
-  <div class="price-row"><span>Sisätilojen puhdistus</span><strong>Alk. 50 €</strong></div>
-  <div class="price-row"><span>Maalipinnan myllytys</span><strong>Alk. 150 €</strong></div>
-  <div class="price-row"><span>Vahaus</span><strong>Alk. 100 €</strong></div>
-  <div class="price-row"><span>Kokonaisvaltainen detailing</span><strong>Pyydä tarjous</strong></div>
- </div>
- <p class="price-note">Hinnat ovat alustavia esimerkkihintoja. Vahvista ne ennen julkaisua.</p>
+<section class="services" id="palvelut">
+<div class="heading">
+<small>PALVELUT</small>
+<h2>Autonhoito</h2>
+<p>Huolellista työtä auton ulko- ja sisäpinnoille.</p>
+</div>
+<div class="service-grid">
+<div class="service"><h3>Ulkopesu</h3><p>Auton ulkopintojen huolellinen pesu ja puhdistus.</p></div>
+<div class="service"><h3>Sisäpesu</h3><p>Sisätilojen, mattojen ja pintojen puhdistus.</p></div>
+<div class="service"><h3>Maalipinnan myllytys</h3><p>Maalipinnan kiillotus ja näkyvien pesunaarmujen vähentäminen.</p></div>
+<div class="service"><h3>Vahaus</h3><p>Maalipinnan suojaava viimeistely.</p></div>
+<div class="service"><h3>Vanteiden pesu</h3><p>Vanteiden ja renkaiden puhdistus.</p></div>
+<div class="service"><h3>Kokonaisvaltainen detailing</h3><p>Autonhoitoa asiakkaan tarpeiden mukaan.</p></div>
+</div>
 </section>
 
-<section class="about">
- <div class="section-heading">
-  <small>MS AUTODETAILING</small>
-  <h2>Laatua jokaisessa yksityiskohdassa</h2>
- </div>
- <p class="about-text">
-  Meille autonhoidossa tärkeintä ovat huolellisuus,
-  puhtaus ja viimeistelty työnjälki. Tavoitteena on
-  tarjota laadukasta palvelua ja pitää jokainen auto
-  parhaassa mahdollisessa kunnossa.
- </p>
+<section class="contact" id="yhteys">
+<div class="heading">
+<small>OTA YHTEYTTÄ</small>
+<h2>Pyydä tarjous</h2>
+<p>Ota yhteyttä ja kysy lisää autonhoitopalveluista.</p>
+</div>
+<p>Puhelin: Lisää puhelinnumero</p>
+<p>Sähköposti: Lisää sähköposti</p>
+<p>Paikkakunta: Lisää sijainti</p>
+<a class="button" href="mailto:">OTA YHTEYTTÄ</a>
 </section>
-
-<section class="contact" id="yhteystiedot">
- <div class="section-heading">
-  <small>YHTEYDENOTTO</small>
-  <h2>Ota yhteyttä</h2>
-  <p>Kiinnostuitko palveluista? Kysy lisää tai pyydä tarjous autollesi.</p>
- </div>
- <div class="contact-details">
-  <div><small>PUHELIN</small><strong>Lisää numero</strong></div>
-  <div><small>SÄHKÖPOSTI</small><strong>Lisää sähköposti</strong></div>
-  <div><small>SIJAINTI</small><strong>Lisää paikkakunta</strong></div>
- </div>
- <a class="button" href="mailto:">OTA YHTEYTTÄ</a>
-</section>
-
 </main>
 
 <footer>
- <div class="footer-top">
-  <div>
-   <div class="footer-brand">MS <span>AUTODETAILING</span></div>
-   <p>Puhtaus. Kiilto. Laatu.</p>
-  </div>
-  <div>
-   <p>Autonhoitoa ja detailing-palveluita.<br>Huolellista työnjälkeä jokaiseen autoon.</p>
-  </div>
- </div>
- <div class="footer-bottom">© 2026 MS AutoDetailing. Kaikki oikeudet pidätetään.</div>
+MS AUTODETAILING · PUHTAUS · KIILTO · LAATU
 </footer>
-
 </body>
 </html>
