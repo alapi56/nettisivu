@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MS AutoDetailing | Autonhoito</title>
+<title>MS AutoDetailing</title>
 
 <style>
 * {
@@ -18,15 +18,16 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0b0b0b;
+    background: #101010;
     color: white;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
 header {
     background: #050505;
-    padding: 22px 8%;
+    min-height: 80px;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,15 +36,20 @@ header {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 23px;
     font-weight: bold;
     letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 18px;
     font-size: 14px;
 }
 
@@ -53,18 +59,18 @@ nav a:hover {
 
 .hero {
     min-height: 550px;
-    background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
-        url("https://cdn.prod.website-files.com/682dff2e2bfe3aa652c00ac7/68389b9edf9496167cf47974_IMG_9415.jpeg");
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     padding: 70px 9%;
+    background-image:
+        linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.2)),
+        url("https://cdn.prod.website-files.com/682dff2e2bfe3aa652c00ac7/68389b9edf9496167cf47974_IMG_9415.jpeg");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-content {
-    max-width: 650px;
+    max-width: 620px;
 }
 
 .hero h1 {
@@ -74,16 +80,16 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: 18px;
     color: #ddd;
+    font-size: 18px;
     margin-bottom: 28px;
 }
 
 .button {
     display: inline-block;
+    padding: 13px 25px;
     background: white;
     color: black;
-    padding: 13px 25px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 3px;
@@ -96,7 +102,7 @@ section {
 .section-title {
     text-align: center;
     font-size: 34px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .subtitle {
@@ -108,20 +114,20 @@ section {
 .services,
 .prices {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .card {
-    background: #181818;
-    padding: 28px;
-    border: 1px solid #303030;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    padding: 25px;
     border-radius: 5px;
 }
 
 .card h3 {
-    font-size: 21px;
     margin-bottom: 12px;
+    font-size: 20px;
 }
 
 .card p {
@@ -130,73 +136,95 @@ section {
 }
 
 .price {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
-    margin-top: 16px;
+    margin-top: 15px;
 }
 
 .dark-section {
-    background: #111;
+    background: #080808;
 }
 
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
 
-<section id="galleria">
-    <h2 class="section-title">Työn jälkeä</h2>
-    <p class="subtitle">Autonhoitoa ja viimeisteltyjä yksityiskohtia.</p>
+.gallery-item {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #222;
+}
 
-    <div class="gallery">
-        <img
-            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
-            alt="Urheiluauto"
-        >
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
-        <img
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
-            alt="Porsche urheiluauto"
-        >
-
-        <img
-            src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85"
-            alt="Chevrolet urheiluauto"
-        >
-    </div>
-</section>
-
-
+/* CONTACT */
 .contact {
-    background: #181818;
+    background: #1a1a1a;
     text-align: center;
-}
-
-.contact p {
-    color: #ccc;
-    margin: 12px 0;
 }
 
 .contact-info {
     margin: 30px auto;
 }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #888;
-    background: #050505;
+.contact-info p {
+    color: #ddd;
+    margin: 12px 0;
 }
 
-@media (max-width: 600px) {
+footer {
+    background: #050505;
+    color: #888;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 800px) {
+    .services,
+    .prices {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
     header {
         justify-content: center;
         text-align: center;
     }
 
-    nav a {
-        margin: 0 7px;
-        font-size: 13px;
+    nav {
+        justify-content: center;
+        gap: 12px;
     }
 
     .hero {
         min-height: 430px;
+    }
+
+    .services,
+    .prices,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 240px;
     }
 
     section {
@@ -210,7 +238,6 @@ footer {
 
 <header>
     <div class="logo">MS AUTODETAILING</div>
-
     <nav>
         <a href="#palvelut">Palvelut</a>
         <a href="#hinnasto">Hinnasto</a>
@@ -222,7 +249,7 @@ footer {
 <div class="hero">
     <div class="hero-content">
         <h1>Autollesi ansaitsema hoito.</h1>
-        <p>Laadukasta autonhoitoa, puhdistusta ja viimeisteltyä kiiltoa.</p>
+        <p>Huolellista autonhoitoa, puhdistusta ja viimeisteltyä kiiltoa.</p>
         <a class="button" href="#palvelut">Tutustu palveluihin</a>
     </div>
 </div>
@@ -232,25 +259,24 @@ footer {
     <p class="subtitle">Autosi puhtauden ja ulkonäön ylläpitoon.</p>
 
     <div class="services">
-
         <div class="card">
             <h3>Ylläpitopesu</h3>
-            <p>Auton ulkopintojen pesu, vanteiden puhdistus ja huolellinen kuivaus. Sopii auton säännölliseen puhtaanapitoon.</p>
+            <p>Auton ulkopintojen pesu, vanteiden puhdistus ja huolellinen kuivaus. Sopii säännölliseen puhtaanapitoon.</p>
         </div>
 
         <div class="card">
             <h3>Perusteellinen pesu</h3>
-            <p>Tehostettu puhdistus, jossa keskitytään myös pinttyneempään likaan ja auton yksityiskohtiin.</p>
+            <p>Huolellisempi puhdistus myös pinttyneemmälle lialle ja auton yksityiskohdille.</p>
         </div>
 
         <div class="card">
             <h3>Sisätilojen puhdistus</h3>
-            <p>Auton sisäpintojen, mattojen ja muiden sisätilojen puhdistus raikkaan lopputuloksen saavuttamiseksi.</p>
+            <p>Mattojen, istuinten ja sisäpintojen puhdistus auton sisätilojen raikastamiseksi.</p>
         </div>
 
         <div class="card">
             <h3>Maalipinnan kiillotus</h3>
-            <p>Maalipinnan kiillon parantaminen ja pesunaarmujen vähentäminen auton kunnon mukaan.</p>
+            <p>Maalipinnan kiillon parantaminen ja naarmujen vähentäminen auton kunnon mukaan.</p>
         </div>
 
         <div class="card">
@@ -260,9 +286,8 @@ footer {
 
         <div class="card">
             <h3>Detailing-paketti</h3>
-            <p>Laajempi autonhoitokokonaisuus, joka suunnitellaan auton kunnon ja asiakkaan tarpeiden mukaan.</p>
+            <p>Laajempi autonhoitokokonaisuus asiakkaan tarpeiden mukaan.</p>
         </div>
-
     </div>
 </section>
 
@@ -271,7 +296,6 @@ footer {
     <p class="subtitle">Esimerkkihinnat – yrityksen vahvistettaviksi.</p>
 
     <div class="prices">
-
         <div class="card">
             <h3>Ylläpitopesu</h3>
             <p>Ulkopintojen pesu ja kuivaus.</p>
@@ -280,19 +304,19 @@ footer {
 
         <div class="card">
             <h3>Perusteellinen pesu</h3>
-            <p>Huolellisempi ulkopintojen puhdistus.</p>
+            <p>Tehostettu ulkopintojen puhdistus.</p>
             <div class="price">Alk. 45 €</div>
         </div>
 
         <div class="card">
             <h3>Sisätilojen puhdistus</h3>
-            <p>Sisätilojen perusteellinen siistiminen.</p>
+            <p>Sisätilojen huolellinen puhdistus.</p>
             <div class="price">Alk. 50 €</div>
         </div>
 
         <div class="card">
             <h3>Maalipinnan kiillotus</h3>
-            <p>Maalipinnan kiillon palauttaminen.</p>
+            <p>Maalipinnan kiillon parantaminen.</p>
             <div class="price">Alk. 150 €</div>
         </div>
 
@@ -304,23 +328,37 @@ footer {
 
         <div class="card">
             <h3>Detailing-paketti</h3>
-            <p>Laajempi autonhoitokokonaisuus.</p>
+            <p>Laaja autonhoitokokonaisuus.</p>
             <div class="price">Pyydä tarjous</div>
         </div>
-
     </div>
 </section>
 
 <section id="galleria">
     <h2 class="section-title">Työn jälkeä</h2>
-    <p class="subtitle">Autonhoitoa ja viimeisteltyjä yksityiskohtia.</p>
+    <p class="subtitle">Autoja ja autonhoitoa.</p>
 
     <div class="gallery">
-        <img src="https://cdn.prod.website-files.com/682dff2e2bfe3aa652c00ac7/68389b9edf9496167cf47974_IMG_9415.jpeg" alt="Musta BMW">
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
+                alt="Punainen urheiluauto"
+                loading="lazy">
+        </div>
 
-        <img src="https://cdn.prod.website-files.com/682dff2e2bfe3aa652c00ac7/68389b9edf9496167cf47974_IMG_9415.jpeg" alt="Musta BMW detailing">
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
+                alt="Urheiluauto"
+                loading="lazy">
+        </div>
 
-        <img src="https://cdn.prod.website-files.com/682dff2e2bfe3aa652c00ac7/68389b9edf9496167cf47974_IMG_9415.jpeg" alt="Musta BMW viimeisteltynä">
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85"
+                alt="Punainen urheiluauto"
+                loading="lazy">
+        </div>
     </div>
 </section>
 
