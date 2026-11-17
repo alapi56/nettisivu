@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MS AutoDetailing | Autonhoito</title>
 
 <style>
@@ -46,7 +47,7 @@ nav a {
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg, #080808 15%, rgba(0,0,0,.35)),
+    linear-gradient(90deg, #080808 15%, rgba(0,0,0,.4)),
     url("https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=1800")
     center/cover;
 }
@@ -92,7 +93,7 @@ h2 {
 
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -118,9 +119,8 @@ h2 {
 
 .gallery img {
   width: 100%;
-  height: 250px;
+  height: 260px;
   object-fit: cover;
-  border-radius: 3px;
   display: block;
 }
 
@@ -155,6 +155,7 @@ footer {
     min-height: 450px;
   }
 
+  .services,
   .gallery {
     grid-template-columns: 1fr;
   }
@@ -181,7 +182,7 @@ footer {
 <div class="hero">
   <div class="hero-content">
     <p>AUTONHOITOA AMMATTITAIDOLLA</p>
-   <img src="ms_autodetailing_bmw_bright_gallery.jpg" alt="Kiillotettu musta BMW">
+    <h1>Autollesi ansaitsema hoito.</h1>
     <p>Huolellista autonhoitoa, kiillotusta ja viimeistelyä.</p>
     <a class="btn" href="#yhteystiedot">Ota yhteyttä</a>
   </div>
@@ -192,6 +193,7 @@ footer {
   <p class="intro">Autosi parhaaksi – laadukkaasti ja huolellisesti.</p>
 
   <div class="services">
+
     <div class="service">
       <h3>Auton pesu</h3>
       <p>Huolellinen auton puhdistus sisältä ja ulkoa.</p>
@@ -206,6 +208,7 @@ footer {
       <h3>Pinnoitus</h3>
       <p>Auton maalipinnan suojaaminen ja viimeistely.</p>
     </div>
+
   </div>
 </section>
 
@@ -220,8 +223,8 @@ footer {
       alt="Auton pesu">
 
     <img
-      src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900"
-      alt="Kiiltävä auto">
+      src="ms_autodetailing_bmw_bright_gallery.jpg"
+      alt="Kiillotettu musta BMW">
 
     <img
       src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=900"
@@ -233,7 +236,6 @@ footer {
 <section class="contact" id="yhteystiedot">
   <h2>Ota yhteyttä</h2>
   <p>Kiinnostuitko palveluistamme? Ota yhteyttä ja kysy lisää.</p>
-  <a class="btn" href="tel:0449707806">Soita meille</a>
 </section>
 
 <footer>
