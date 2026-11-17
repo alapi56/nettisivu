@@ -4,378 +4,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MS AutoDetailing</title>
-
+<title>MS AutoDetailing | Autonhoito</title>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#090909;color:#fff;line-height:1.6}
+header{position:sticky;top:0;background:#080808;border-bottom:1px solid #292929;z-index:10}
+nav{max-width:1150px;margin:auto;padding:20px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font-size:23px;font-weight:800;letter-spacing:2px}
+nav a{color:#fff;text-decoration:none;margin-left:22px;font-size:14px}
+nav a:hover{color:#aaa}
+.hero{min-height:570px;display:flex;align-items:center;padding:70px max(calc((100% - 1100px)/2),7%);background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:600px}
+.hero h1{font-size:clamp(38px,6vw,65px);line-height:1.08;margin-bottom:20px}
+.hero p{font-size:19px;color:#ddd;margin-bottom:28px}
+.btn{display:inline-block;background:#fff;color:#000;padding:13px 25px;text-decoration:none;font-weight:bold}
+section{max-width:1150px;margin:auto;padding:85px 25px}
+.section-title{text-align:center;font-size:34px;margin-bottom:12px}
+.section-sub{text-align:center;color:#aaa;margin-bottom:42px}
+.services,.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service,.price{background:#151515;border:1px solid #292929;padding:27px}
+.service h3,.price h3{font-size:21px;margin-bottom:10px}
+.service p,.price p{color:#bbb;font-size:15px}
+.price strong{display:block;font-size:25px;margin:15px 0}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery img{width:100%;height:250px;object-fit:cover;display:block}
+.contact{background:#151515;text-align:center;max-width:none}
+.contact-inner{max-width:800px;margin:auto;padding:75px 25px}
+.contact p{color:#ccc;margin:10px 0}
+.contact a{color:#fff}
+footer{text-align:center;padding:25px;color:#888;border-top:1px solid #292929;font-size:13px}
+@media(max-width:750px){
+ nav{flex-direction:column}
+ nav a{margin:0 8px;font-size:13px}
+ .services,.prices{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr 1fr}
+ .gallery img{height:190px}
+ .hero{min-height:480px}
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #101010;
-    color: white;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-header {
-    background: #050505;
-    min-height: 80px;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.logo {
-    font-size: 23px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #aaa;
-}
-
-.hero {
-    min-height: 550px;
-    display: flex;
-    align-items: center;
-    padding: 70px 9%;
-    background-image:
-        linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.2)),
-        url("https://cdn.prod.website-files.com/682dff2e2bfe3aa652c00ac7/68389b9edf9496167cf47974_IMG_9415.jpeg");
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-content {
-    max-width: 620px;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 6vw, 65px);
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    color: #ddd;
-    font-size: 18px;
-    margin-bottom: 28px;
-}
-
-.button {
-    display: inline-block;
-    padding: 13px 25px;
-    background: white;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 3px;
-}
-
-section {
-    padding: 75px 9%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 40px;
-}
-
-.services,
-.prices {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #1b1b1b;
-    border: 1px solid #333;
-    padding: 25px;
-    border-radius: 5px;
-}
-
-.card h3 {
-    margin-bottom: 12px;
-    font-size: 20px;
-}
-
-.card p {
-    color: #bbb;
-    font-size: 15px;
-}
-
-.price {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-.dark-section {
-    background: #080808;
-}
-
-/* GALLERY */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-
-.gallery-item {
-    width: 100%;
-    height: 260px;
-    overflow: hidden;
-    border-radius: 5px;
-    background: #222;
-}
-
-.gallery-item img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* CONTACT */
-.contact {
-    background: #1a1a1a;
-    text-align: center;
-}
-
-.contact-info {
-    margin: 30px auto;
-}
-
-.contact-info p {
-    color: #ddd;
-    margin: 12px 0;
-}
-
-footer {
-    background: #050505;
-    color: #888;
-    text-align: center;
-    padding: 25px;
-}
-
-@media (max-width: 800px) {
-    .services,
-    .prices {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 550px) {
-    header {
-        justify-content: center;
-        text-align: center;
-    }
-
-    nav {
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .hero {
-        min-height: 430px;
-    }
-
-    .services,
-    .prices,
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        height: 240px;
-    }
-
-    section {
-        padding: 55px 6%;
-    }
+@media(max-width:430px){
+ .gallery{grid-template-columns:1fr}
+ .gallery img{height:230px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-    <div class="logo">MS AUTODETAILING</div>
-    <nav>
-        <a href="#palvelut">Palvelut</a>
-        <a href="#hinnasto">Hinnasto</a>
-        <a href="#galleria">Galleria</a>
-        <a href="#yhteystiedot">Yhteystiedot</a>
-    </nav>
+<nav>
+<div class="logo">MS AUTODETAILING</div>
+<div>
+<a href="#palvelut">Palvelut</a>
+<a href="#hinnasto">Hinnasto</a>
+<a href="#galleria">Galleria</a>
+<a href="#yhteystiedot">Yhteystiedot</a>
+</div>
+</nav>
 </header>
 
 <div class="hero">
-    <div class="hero-content">
-        <h1>Autollesi ansaitsema hoito.</h1>
-        <p>Huolellista autonhoitoa, puhdistusta ja viimeisteltyä kiiltoa.</p>
-        <a class="button" href="#palvelut">Tutustu palveluihin</a>
-    </div>
+<div class="hero-content">
+<h1>Autollesi ansaitsema hoito.</h1>
+<p>Laadukasta autonhoitoa, puhdistusta ja viimeisteltyä kiiltoa.</p>
+<a class="btn" href="#palvelut">Tutustu palveluihin</a>
+</div>
 </div>
 
 <section id="palvelut">
-    <h2 class="section-title">Palvelumme</h2>
-    <p class="subtitle">Autosi puhtauden ja ulkonäön ylläpitoon.</p>
-
-    <div class="services">
-        <div class="card">
-            <h3>Ylläpitopesu</h3>
-            <p>Auton ulkopintojen pesu, vanteiden puhdistus ja huolellinen kuivaus. Sopii säännölliseen puhtaanapitoon.</p>
-        </div>
-
-        <div class="card">
-            <h3>Perusteellinen pesu</h3>
-            <p>Huolellisempi puhdistus myös pinttyneemmälle lialle ja auton yksityiskohdille.</p>
-        </div>
-
-        <div class="card">
-            <h3>Sisätilojen puhdistus</h3>
-            <p>Mattojen, istuinten ja sisäpintojen puhdistus auton sisätilojen raikastamiseksi.</p>
-        </div>
-
-        <div class="card">
-            <h3>Maalipinnan kiillotus</h3>
-            <p>Maalipinnan kiillon parantaminen ja naarmujen vähentäminen auton kunnon mukaan.</p>
-        </div>
-
-        <div class="card">
-            <h3>Vahaus ja pinnoitus</h3>
-            <p>Maalipinnan suojaaminen ja kiillon ylläpitäminen sopivalla suoja-aineella.</p>
-        </div>
-
-        <div class="card">
-            <h3>Detailing-paketti</h3>
-            <p>Laajempi autonhoitokokonaisuus asiakkaan tarpeiden mukaan.</p>
-        </div>
-    </div>
+<h2 class="section-title">Palvelut</h2>
+<p class="section-sub">Autosi puhtauden ja ulkonäön parhaaksi.</p>
+<div class="services">
+<div class="service">
+<h3>Ylläpitopesu</h3>
+<p>Auton ulkopintojen huolellinen pesu. Poistamme lian ja tiepölyn sekä viimeistelemme pinnat puhtaiksi.</p>
+</div>
+<div class="service">
+<h3>Perusteellinen pesu</h3>
+<p>Huolellisempi puhdistus auton ulko- ja sisäpinnoille. Sopii autolle, joka kaipaa tavallista pesua enemmän huomiota.</p>
+</div>
+<div class="service">
+<h3>Sisätilojen puhdistus</h3>
+<p>Mattojen, muovipintojen ja muiden sisätilojen puhdistus. Tavoitteena siisti ja raikas matkustamo.</p>
+</div>
+<div class="service">
+<h3>Maalipinnan kiillotus</h3>
+<p>Maalipinnan kiillotus, jolla voidaan vähentää näkyviä pyörrejälkiä ja palauttaa pinnan kiiltoa.</p>
+</div>
+<div class="service">
+<h3>Pinnoitus</h3>
+<p>Pinnan suojaaminen valitulla suoja-aineella. Auttaa pitämään auton puhtaampana ja helpottaa pesua.</p>
+</div>
+<div class="service">
+<h3>Vanteiden puhdistus</h3>
+<p>Vanteiden ja vaikeasti tavoitettavien kohtien huolellinen puhdistus.</p>
+</div>
+</div>
 </section>
 
-<section class="dark-section" id="hinnasto">
-    <h2 class="section-title">Hinnasto</h2>
-    <p class="subtitle">Esimerkkihinnat – yrityksen vahvistettaviksi.</p>
-
-    <div class="prices">
-        <div class="card">
-            <h3>Ylläpitopesu</h3>
-            <p>Ulkopintojen pesu ja kuivaus.</p>
-            <div class="price">Alk. 25 €</div>
-        </div>
-
-        <div class="card">
-            <h3>Perusteellinen pesu</h3>
-            <p>Tehostettu ulkopintojen puhdistus.</p>
-            <div class="price">Alk. 45 €</div>
-        </div>
-
-        <div class="card">
-            <h3>Sisätilojen puhdistus</h3>
-            <p>Sisätilojen huolellinen puhdistus.</p>
-            <div class="price">Alk. 50 €</div>
-        </div>
-
-        <div class="card">
-            <h3>Maalipinnan kiillotus</h3>
-            <p>Maalipinnan kiillon parantaminen.</p>
-            <div class="price">Alk. 150 €</div>
-        </div>
-
-        <div class="card">
-            <h3>Vahaus ja pinnoitus</h3>
-            <p>Maalipinnan suojaaminen.</p>
-            <div class="price">Alk. 100 €</div>
-        </div>
-
-        <div class="card">
-            <h3>Detailing-paketti</h3>
-            <p>Laaja autonhoitokokonaisuus.</p>
-            <div class="price">Pyydä tarjous</div>
-        </div>
-    </div>
+<section id="hinnasto">
+<h2 class="section-title">Hinnasto</h2>
+<p class="section-sub">Esimerkkihinnat – varmista yrityksen lopulliset hinnat ennen julkaisua.</p>
+<div class="prices">
+<div class="price">
+<h3>Ylläpitopesu</h3>
+<p>Ulkopesu ja pintojen viimeistely.</p>
+<strong>Alk. 30 €</strong>
+</div>
+<div class="price">
+<h3>Perusteellinen pesu</h3>
+<p>Huolellinen ulkopesu ja sisätilojen puhdistus.</p>
+<strong>Alk. 60 €</strong>
+</div>
+<div class="price">
+<h3>Sisätilojen puhdistus</h3>
+<p>Matot, muovipinnat ja sisätilojen puhdistus.</p>
+<strong>Alk. 50 €</strong>
+</div>
+<div class="price">
+<h3>Maalipinnan kiillotus</h3>
+<p>Maalipinnan kiillotus auton kunnon mukaan.</p>
+<strong>Alk. 150 €</strong>
+</div>
+<div class="price">
+<h3>Pinnoitus</h3>
+<p>Pinnan suojaus valitulla käsittelyllä.</p>
+<strong>Alk. 100 €</strong>
+</div>
+<div class="price">
+<h3>Vanteiden puhdistus</h3>
+<p>Vanteiden perusteellinen puhdistus.</p>
+<strong>Alk. 25 €</strong>
+</div>
+</div>
 </section>
 
 <section id="galleria">
-    <h2 class="section-title">Työn jälkeä</h2>
-    <p class="subtitle">Autoja ja autonhoitoa.</p>
-
-    <div class="gallery">
-        <div class="gallery-item">
-            <img
-                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
-                alt="Punainen urheiluauto"
-                loading="lazy">
-        </div>
-
-        <div class="gallery-item">
-            <img
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
-                alt="Urheiluauto"
-                loading="lazy">
-        </div>
-
-        <div class="gallery-item">
-            <img
-                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85"
-                alt="Punainen urheiluauto"
-                loading="lazy">
-        </div>
-    </div>
+<h2 class="section-title">Galleria</h2>
+<p class="section-sub">Autonhoitoa ja viimeisteltyä työn jälkeä.</p>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85" alt="Urheiluauto">
+<img src="https://cdn.prod.website-files.com/682dff2e2bfe3aa652c00ac7/68389b9edf9496167cf47974_IMG_9415.jpeg" alt="Autonhoidon työn jälki">
+<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85" alt="Auto ulkona">
+</div>
 </section>
 
-<section class="contact" id="yhteystiedot">
-    <h2 class="section-title">Ota yhteyttä</h2>
-    <p>Haluatko varata ajan tai kysyä lisää palveluista?</p>
-
-    <div class="contact-info">
-        <p><strong>Yritys:</strong> MS AutoDetailing</p>
-        <p><strong>Puhelin:</strong> Lisää oikea puhelinnumero</p>
-        <p><strong>Sähköposti:</strong> Lisää oikea sähköpostiosoite</p>
-        <p><strong>Sijainti:</strong> Lisää toimipaikka</p>
-    </div>
-</section>
+<div class="contact" id="yhteystiedot">
+<div class="contact-inner">
+<h2 class="section-title">Ota yhteyttä</h2>
+<p>Kiinnostuitko palveluistamme? Ota yhteyttä ja kysy lisää tai pyydä tarjous.</p>
+<p><strong>MS AutoDetailing</strong></p>
+<p>Puhelin: Lisää yrityksen puhelinnumero</p>
+<p>Sähköposti: Lisää yrityksen sähköposti</p>
+<p>Paikkakunta: Lisää sijainti</p>
+</div>
+</div>
 
 <footer>
-    <p>© 2026 MS AutoDetailing</p>
+© 2026 MS AutoDetailing
 </footer>
 
 </body>
