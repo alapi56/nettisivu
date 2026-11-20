@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NORDIC DETAIL – Autonhoito ja detailing</title>
-<meta name="description" content="Laadukkaat autonpesut, maalipinnan kiillotukset ja sisätilojen puhdistukset. Varaa aikasi jo tänään.">
+<title>NORDIC DETAIL | Premium Autonhoito</title>
+<meta name="description" content="Laadukkaat autonpesut, maalipinnan kiillotukset ja sisätilojen puhdistukset.">
 
 <style>
 * {
@@ -16,17 +16,17 @@
 }
 
 body {
-  background: #080808;
+  background: #090909;
   color: white;
   font-family: Arial, sans-serif;
 }
 
 header {
-  height: 85px;
+  min-height: 85px;
+  padding: 20px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8%;
   background: #080808;
   border-bottom: 1px solid #292929;
 }
@@ -38,7 +38,7 @@ header {
 }
 
 .logo span {
-  color: #aaa;
+  color: #999;
 }
 
 nav {
@@ -54,17 +54,18 @@ nav a {
 }
 
 nav a:hover {
-  color: #aaa;
+  color: #999;
 }
 
 .hero {
-  min-height: 670px;
+  min-height: 650px;
   display: flex;
   align-items: center;
   padding: 80px 10%;
   background:
-  linear-gradient(90deg, rgba(0,0,0,.95), rgba(0,0,0,.35)),
-  url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=90') center/cover;
+    linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.35)),
+    url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=90')
+    center/cover;
 }
 
 .hero-content {
@@ -103,7 +104,7 @@ h1 {
 }
 
 .btn:hover {
-  background: #aaa;
+  background: #bbb;
   transform: translateY(-3px);
 }
 
@@ -135,8 +136,8 @@ section {
 .service-card {
   background: #191919;
   border: 1px solid #292929;
-  transition: .3s;
   overflow: hidden;
+  transition: .3s;
 }
 
 .service-card:hover {
@@ -146,7 +147,7 @@ section {
 
 .service-card img {
   width: 100%;
-  height: 230px;
+  height: 240px;
   object-fit: cover;
   display: block;
 }
@@ -180,6 +181,12 @@ section {
   padding: 35px 28px;
   border: 1px solid #333;
   background: #111;
+  transition: .3s;
+}
+
+.price-card:hover {
+  border-color: #888;
+  transform: translateY(-5px);
 }
 
 .price-card h3 {
@@ -200,33 +207,12 @@ section {
   font-size: 14px;
 }
 
-.gallery {
-  background: #101010;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 310px;
-  object-fit: cover;
-  display: block;
-  transition: .4s;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.02);
-}
-
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  background: #101010;
 }
 
 .about img {
@@ -261,16 +247,12 @@ footer {
 
 @media(max-width: 800px) {
   header {
-    padding: 0 5%;
-    height: auto;
-    min-height: 80px;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    flex-direction: column;
+    gap: 20px;
   }
 
   nav {
+    justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
   }
@@ -285,17 +267,17 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
   section {
     padding: 70px 6%;
   }
 
   .hero {
-    min-height: 580px;
+    min-height: 550px;
     padding: 60px 7%;
+  }
+
+  .about img {
+    height: 300px;
   }
 }
 </style>
@@ -310,7 +292,6 @@ footer {
     <a href="#etusivu">Etusivu</a>
     <a href="#palvelut">Palvelut</a>
     <a href="#hinnasto">Hinnasto</a>
-    <a href="#galleria">Galleria</a>
     <a href="#yhteys">Yhteystiedot</a>
   </nav>
 </header>
@@ -318,18 +299,23 @@ footer {
 <div class="hero" id="etusivu">
   <div class="hero-content">
     <div class="small-title">PREMIUM CAR DETAILING</div>
+
     <h1>ENEMMÄN KUIN PELKKÄ AUTONPESU.</h1>
+
     <p>
       Autosi ansaitsee parasta mahdollista huolenpitoa.
       Ammattitaitoinen autonhoito palauttaa kiillon,
       puhtauden ja viimeistellyn ulkonäön.
     </p>
+
     <a href="#yhteys" class="btn">OTA YHTEYTTÄ</a>
   </div>
 </div>
 
 <section class="services" id="palvelut">
+
   <h2 class="section-title">PALVELUMME</h2>
+
   <p class="section-desc">
     Huolellista autonhoitoa jokaiselle ajoneuvolle.
   </p>
@@ -337,26 +323,47 @@ footer {
   <div class="service-grid">
 
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=85" alt="Auton pesu">
+      <img
+        src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=85"
+        alt="Auton käsinpesu"
+      >
+
       <div class="service-info">
         <h3>Ulkopesu</h3>
-        <p>Huolellinen ulkopesu, vanteiden puhdistus ja maalipinnan viimeistely.</p>
+        <p>
+          Huolellinen ulkopesu, vanteiden puhdistus
+          ja maalipinnan viimeistely.
+        </p>
       </div>
     </div>
 
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1613214150384-8d7f5c4b8f3b?auto=format&fit=crop&w=1000&q=85" alt="Auton kiillotus">
+      <img
+        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85"
+        alt="Kiiltävä Porsche"
+      >
+
       <div class="service-info">
         <h3>Maalipinnan kiillotus</h3>
-        <p>Maalipinnan kiillon palauttaminen ja pesunaarmujen vähentäminen.</p>
+        <p>
+          Maalipinnan kiillon palauttaminen
+          ja pesunaarmujen vähentäminen.
+        </p>
       </div>
     </div>
 
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1000&q=85" alt="Auton sisätilat">
+      <img
+        src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1000&q=85"
+        alt="Auton sisätilat"
+      >
+
       <div class="service-info">
         <h3>Sisätilojen puhdistus</h3>
-        <p>Perusteellinen sisätilojen puhdistus ja raikkaampi matkustamo.</p>
+        <p>
+          Perusteellinen sisätilojen puhdistus
+          ja raikkaampi matkustamo.
+        </p>
       </div>
     </div>
 
@@ -364,14 +371,19 @@ footer {
 </section>
 
 <section class="prices" id="hinnasto">
+
   <h2 class="section-title">HINNASTO</h2>
-  <p class="section-desc">Esimerkkihinnat autonhoitopalveluille.</p>
+
+  <p class="section-desc">
+    Esimerkkihinnat autonhoitopalveluille.
+  </p>
 
   <div class="price-grid">
 
     <div class="price-card">
       <h3>Peruspesu</h3>
       <div class="price">49 €</div>
+
       <ul>
         <li>✓ Ulkopesu</li>
         <li>✓ Vanteiden puhdistus</li>
@@ -383,6 +395,7 @@ footer {
     <div class="price-card">
       <h3>Premium-pesu</h3>
       <div class="price">89 €</div>
+
       <ul>
         <li>✓ Peruspesun sisältö</li>
         <li>✓ Sisätilojen imurointi</li>
@@ -394,6 +407,7 @@ footer {
     <div class="price-card">
       <h3>Maalipinnan kiillotus</h3>
       <div class="price">199 €</div>
+
       <ul>
         <li>✓ Huolellinen pesu</li>
         <li>✓ Maalipinnan tarkastus</li>
@@ -405,41 +419,42 @@ footer {
   </div>
 </section>
 
-<section class="gallery" id="galleria">
-  <h2 class="section-title">VIIMEISTELTY LOPPUTULOS</h2>
-  <p class="section-desc">
-    Puhdas pinta, syvä kiilto ja huolellinen viimeistely.
-  </p>
-
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=90" alt="Kiiltävä auto">
-    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=90" alt="Urheiluauto">
-    <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=90" alt="Viimeistelty auto">
-    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=90" alt="Auton ulkopinta">
-  </div>
-</section>
-
 <section class="about">
+
   <div>
     <h2 class="section-title">LAATU NÄKYY JÄLJESSÄ.</h2>
+
     <p>
       Jokainen auto ansaitsee huolellista käsittelyä.
       Tavoitteenamme on tarjota laadukasta autonhoitoa,
       jossa yksityiskohdat ratkaisevat.
     </p>
+
     <p>
-      Olipa kyseessä perusteellinen pesu tai maalipinnan
-      kiillotus, lopputulos tehdään huolella.
+      Olipa kyseessä perusteellinen pesu tai
+      maalipinnan kiillotus, lopputulos tehdään huolella.
     </p>
   </div>
 
-  <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=85" alt="Autonhoito">
+  <img
+    src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=85"
+    alt="Ammattimainen autonhoito"
+  >
+
 </section>
 
 <section class="contact" id="yhteys">
+
   <h2 class="section-title">VARAA AUTOLLESI AIKA.</h2>
-  <p>Ota yhteyttä ja kysy lisää palveluistamme.</p>
-  <a href="mailto:info@nordicdetail.fi" class="btn">LÄHETÄ SÄHKÖPOSTIA</a>
+
+  <p>
+    Ota yhteyttä ja kysy lisää palveluistamme.
+  </p>
+
+  <a href="mailto:info@nordicdetail.fi" class="btn">
+    LÄHETÄ SÄHKÖPOSTIA
+  </a>
+
 </section>
 
 <footer>
